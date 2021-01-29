@@ -71,7 +71,7 @@ requests which helps highlight the scalability credentials.
 *Step 1: Products*
 
 We need to obtain the latest product information by firing off a request
-to this url: `<https://api.os.uk/downloads/v1/products>`
+to this url: <https://api.os.uk/downloads/v1/products>
 
 The request returns data in a JSON format that contains useful
 information about all the products available for download, including;
