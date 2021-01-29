@@ -1,4 +1,4 @@
-OS Downloads API: Tutorial - DRAFT {#os-downloads-api-tutorial---draft .list-paragraph}
+OS Downloads API: Tutorial - DRAFT 
 ==================================
 
 The [OS Downloads API](https://osdatahub.os.uk/docs/downloads/overview)
@@ -18,8 +18,7 @@ python script and FME workbench. Please feel free to take a look at the
 examples, have a play and then customise them for your own specific
 needs. **\<link to github\>?**
 
-![](./media/image1.png){width="6.6930555555555555in"
-height="2.0701388888888888in"}
+![Example Setup](./media/image1.png)
 
 *Example setup*
 
@@ -46,8 +45,7 @@ All the user has to do is:
     are currently four datasets where individual OS tiles can be
     selected.
 
-![](./media/image2.png){width="4.625in"
-height="2.8890748031496063in"}
+![](./media/image2.png)
 
 *Example version of the csv file*
 
@@ -73,14 +71,13 @@ requests which helps highlight the scalability credentials.
 *Step 1: Products*
 
 We need to obtain the latest product information by firing off a request
-to this url: <https://api.os.uk/downloads/v1/products>
+to this url: `<https://api.os.uk/downloads/v1/products>`
 
 The request returns data in a JSON format that contains useful
 information about all the products available for download, including;
 id, name, description, version and url.
 
-![](./media/image3.png){width="6.6930555555555555in"
-height="1.8993055555555556in"}
+![](./media/image3.png)
 
 *Sample of JSON result regarding products*
 
@@ -93,8 +90,7 @@ products are listed in the file. In the same step, we can also format
 the 'version' dates (from text to date) so we can compare and determine
 if any updates are available.
 
-![](./media/image4.png){width="6.6930555555555555in"
-height="0.4215277777777778in"}
+![](./media/image4.png)
 
 *Example of join*
 
@@ -108,8 +104,7 @@ information will be used to build our final request to receive the
 download file. An example of this request (results in JSON format):
 <https://api.os.uk/downloads/v1/products/OpenGreenspace>
 
-![](./media/image5.png){width="6.6930555555555555in"
-height="2.5729166666666665in"}
+![](./media/image5.png)
 
 *All available parameters for downloading OS Open Greenspace*
 
@@ -147,8 +142,7 @@ link (see 'url' in screenshot below) and the 'fileName' which allows us
 to determine the download format e.g. zip, csv, vector tiles etc, and
 also use to name the downloaded file.
 
-![](./media/image6.png){width="6.6930555555555555in"
-height="0.5222222222222223in"}
+![](./media/image6.png)
 
 *The 'url' is our download link, confirmed by the presence of
 '&redirect' at the end of the request*
@@ -182,13 +176,11 @@ exists which might be worth implementing e.g. no/lost connection to API,
 misspelt names in csv etc. The workbench was created and tested using
 FME Desktop 2019.
 
-![](./media/image7.png){width="6.6930555555555555in"
-height="3.8402777777777777in"}
+![](./media/image7.png)
 
 *Sample of python code*
 
-![](./media/image8.png){width="6.6930555555555555in"
-height="6.317361111111111in"}
+![](./media/image8.png)
 
 *FME Workbench*
 
