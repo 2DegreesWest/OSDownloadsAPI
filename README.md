@@ -18,7 +18,7 @@ python script and FME workbench. Please feel free to take a look at the
 examples, have a play and then customise them for your own specific
 needs. **\<link to github\>?**
 
-![](./media/media/image1.png){width="6.6930555555555555in"
+![](./media/image1.png){width="6.6930555555555555in"
 height="2.0701388888888888in"}
 
 *Example setup*
@@ -46,7 +46,7 @@ All the user has to do is:
     are currently four datasets where individual OS tiles can be
     selected.
 
-![](./media/media/image2.png){width="4.625in"
+![](./media/image2.png){width="4.625in"
 height="2.8890748031496063in"}
 
 *Example version of the csv file*
@@ -79,7 +79,7 @@ The request returns data in a JSON format that contains useful
 information about all the products available for download, including;
 id, name, description, version and url.
 
-![](./media/media/image3.png){width="6.6930555555555555in"
+![](./media/image3.png){width="6.6930555555555555in"
 height="1.8993055555555556in"}
 
 *Sample of JSON result regarding products*
@@ -93,7 +93,7 @@ products are listed in the file. In the same step, we can also format
 the 'version' dates (from text to date) so we can compare and determine
 if any updates are available.
 
-![](./media/media/image4.png){width="6.6930555555555555in"
+![](./media/image4.png){width="6.6930555555555555in"
 height="0.4215277777777778in"}
 
 *Example of join*
@@ -108,7 +108,7 @@ information will be used to build our final request to receive the
 download file. An example of this request (results in JSON format):
 <https://api.os.uk/downloads/v1/products/OpenGreenspace>
 
-![](./media/media/image5.png){width="6.6930555555555555in"
+![](./media/image5.png){width="6.6930555555555555in"
 height="2.5729166666666665in"}
 
 *All available parameters for downloading OS Open Greenspace*
@@ -147,7 +147,7 @@ link (see 'url' in screenshot below) and the 'fileName' which allows us
 to determine the download format e.g. zip, csv, vector tiles etc, and
 also use to name the downloaded file.
 
-![](./media/media/image6.png){width="6.6930555555555555in"
+![](./media/image6.png){width="6.6930555555555555in"
 height="0.5222222222222223in"}
 
 *The 'url' is our download link, confirmed by the presence of
@@ -182,12 +182,12 @@ exists which might be worth implementing e.g. no/lost connection to API,
 misspelt names in csv etc. The workbench was created and tested using
 FME Desktop 2019.
 
-![](./media/media/image7.png){width="6.6930555555555555in"
+![](./media/image7.png){width="6.6930555555555555in"
 height="3.8402777777777777in"}
 
 *Sample of python code*
 
-![](./media/media/image8.png){width="6.6930555555555555in"
+![](./media/image8.png){width="6.6930555555555555in"
 height="6.317361111111111in"}
 
 *FME Workbench*
