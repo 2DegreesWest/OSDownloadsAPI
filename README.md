@@ -5,7 +5,7 @@ The [OS Downloads API](https://osdatahub.os.uk/docs/downloads/overview)
 is a service that allows users to automate the discovery and download of
 OS OpenData. This tutorial will demonstrate how a simple csv file can be
 used alongside tools such as a python script or FME workbench, to
-utilise the automated download feature, and make sure you always have
+utilise the automated download feature and make sure you always have
 the most up-to-date data on your servers. A script or workbench can be
 run daily/weekly/monthly using a batch file and gives users the peace of
 mind that they are always using the very latest datasets. Downloads will
@@ -70,7 +70,7 @@ requests which helps highlight the scalability credentials.
 
 *Step 1: Products*
 
-We need to obtain the latest product information by firing off a request
+We need to obtain the latest product information by making a request
 to this url: <https://api.os.uk/downloads/v1/products>
 
 The request returns data in a JSON format that contains useful
@@ -96,7 +96,7 @@ if any updates are available.
 
 *Step 3: Product URL*
 
-If an update is available, we need to fire off another URL request, this
+If an update is available, we need to request another URL, this
 time using the 'url' column information. This url will provide more
 detailed information about the specific product, such as the
 'downloadsUrl' and what formats and area coverage are available. This
@@ -137,7 +137,7 @@ HT:
 *Step 5: Product Download*
 
 We are almost there! Using the URL's we have created in step 4, we can
-now fire off the requests that allow us to obtain the final download
+now make the requests that allow us to obtain the final download
 link (see 'url' in screenshot below) and the 'fileName' which allows us
 to determine the download format e.g. zip, csv, vector tiles etc, and
 also use to name the downloaded file.
@@ -168,7 +168,7 @@ Software/Tools
 --------------
 
 Feel free to test the methodology by downloading the python script or
-FME workbench. The python script was put together using the
+FME workbench. The python script was developed in v3.9 with the help of the
 [pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html)
 software library and users will need to install this in order for the
 script to run. It is also worth noting that no error catching currently
