@@ -14,7 +14,7 @@ as efficient as possible.
 
 The tutorial will discuss the methodology involved in downloading
 available OS products, as well as providing examples in the format of a
-[python script and FME workbench] (./code). Please feel free to take a look at the
+[python script and FME workbench](./code). Please feel free to take a look at the
 examples, have a play and then customise them for your own specific
 needs.
 
