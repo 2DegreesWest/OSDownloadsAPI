@@ -81,6 +81,10 @@ id, name, description, version and url.
 
 *Sample of JSON result regarding products*
 
+'{"id":"250kScaleColourRaster","name":"1:250 000 Scale Colour Raster™","description":"Get the regional view of towns and villages, roads and places of interest.","version":"2020-06","url":"https://api.os.uk/downloads/v1/products/250kScaleColourRaster"},{"id":"BoundaryLine","name":"Boundary-Line™","description":"From Euro constituencies to council wards, Boundary-Line™ maps every administrative boundary in detail for you.","version":"2020-10","url":"https://api.os.uk/downloads/v1/products/BoundaryLine"},{"id":"CodePointOpen","name":"Code-Point® Open","description":"Get started with geographical analysis, simple route planning and asset management.","version":"2020-11","url":"https://api.os.uk/downloads/v1/products/CodePointOpen"},{"id":"GBOverviewMaps","name":"GB Overview Maps","description":"Our simplest maps of the British Isles.","version":"2014-11","url":"https://api.os.uk/downloads/v1/products/GBOverviewMaps"},{"id":"LIDS","name":"OS Open Linked Identifiers","description":"A comprehensive dataset of cross-referenced identifiers, between various OS data products.","version":"2020-12","url":"https://api.os.uk/downloads/v1/products/LIDS"},{"id":"MiniScale","name":"MiniScale®","description":"A simple overview map of Great Britain.","version":"2021-01","url":"https://api.os.uk/downloads/v1/products/MiniScale"},{"id":"OpenGreenspace","name":"OS Open Greenspace","description":"Covering a range of greenspaces in urban and rural areas including playing fields, sports’ facilities, play areas and allotments.","version":"2020-10","url":"https://api.os.uk/downloads/v1/products/OpenGreenspace"}'
+
+
+
 *Step 2: Version Dates*
 
 We need to determine which parts of this request are required, and that
