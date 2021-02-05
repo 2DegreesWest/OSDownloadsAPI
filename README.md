@@ -1,4 +1,4 @@
-Web Development - OS Downloads API: Automated download of all OS OpenData products 
+Web Development - OS Downloads API: Automated download of <ins>all</ins> OS OpenData products 
 ==================================
 
 The [OS Downloads API](https://osdatahub.os.uk/docs/downloads/overview)
