@@ -127,12 +127,9 @@ look like:
 However, if I wanted the same product in shapefile format for areas HP
 and HT, then I would require two separate requests that look like:
 
-HP:
-<https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads?format=ESRI%C2%AE%20Shapefile&area=HP>
+HP:<https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads?format=ESRI%C2%AE%20Shapefile&area=HP>
 
-HT:
-
-<https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads?format=ESRI%C2%AE%20Shapefile&area=HT>
+HT:<https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads?format=ESRI%C2%AE%20Shapefile&area=HT>
 
 *Step 5: Product Download*
 
