@@ -133,7 +133,7 @@ HT: <https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads?format=ESR
 
 We are almost there! Using the URL's we have created in step 4, we can
 now make the requests that allow us to obtain the final download
-link (see 'url' in screenshot below) and the 'fileName' which allows us
+link (see 'url' in example below) and the 'fileName' which allows us
 to determine the download format e.g. zip, csv, vector tiles etc, and
 also use to name the downloaded file.
 
