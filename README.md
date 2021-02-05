@@ -46,7 +46,6 @@ All the user has to do is:
     selected.
 
 ![](./media/image2.png)
-
 *Example version of the csv file*
 
 Once the user has initially setup the csv file, it does not need to be
@@ -77,12 +76,8 @@ The request returns data in a JSON format that contains useful
 information about all the products available for download, including;
 id, name, description, version and url.
 
-![](./media/image3.png)
-
-*Sample of JSON result regarding products*
-
 `{"id":"250kScaleColourRaster","name":"1:250 000 Scale Colour Raster™","description":"Get the regional view of towns and villages, roads and places of interest.","version":"2020-06","url":"https://api.os.uk/downloads/v1/products/250kScaleColourRaster"},{"id":"BoundaryLine","name":"Boundary-Line™","description":"From Euro constituencies to council wards, Boundary-Line™ maps every administrative boundary in detail for you.","version":"2020-10","url":"https://api.os.uk/downloads/v1/products/BoundaryLine"},{"id":"CodePointOpen","name":"Code-Point® Open","description":"Get started with geographical analysis, simple route planning and asset management.","version":"2020-11","url":"https://api.os.uk/downloads/v1/products/CodePointOpen"},{"id":"GBOverviewMaps","name":"GB Overview Maps","description":"Our simplest maps of the British Isles.","version":"2014-11","url":"https://api.os.uk/downloads/v1/products/GBOverviewMaps"},{"id":"LIDS","name":"OS Open Linked Identifiers","description":"A comprehensive dataset of cross-referenced identifiers, between various OS data products.","version":"2020-12","url":"https://api.os.uk/downloads/v1/products/LIDS"},{"id":"MiniScale","name":"MiniScale®","description":"A simple overview map of Great Britain.","version":"2021-01","url":"https://api.os.uk/downloads/v1/products/MiniScale"},{"id":"OpenGreenspace","name":"OS Open Greenspace","description":"Covering a range of greenspaces in urban and rural areas including playing fields, sports’ facilities, play areas and allotments.","version":"2020-10","url":"https://api.os.uk/downloads/v1/products/OpenGreenspace"}`
-
+*Sample of JSON result regarding products*
 
 
 *Step 2: Version Dates*
@@ -108,8 +103,7 @@ information will be used to build our final request to receive the
 download file. An example of this request (results in JSON format):
 <https://api.os.uk/downloads/v1/products/OpenGreenspace>
 
-![](./media/image5.png)
-
+`{"id":"OpenGreenspace","name":"OS Open Greenspace","description":"Covering a range of greenspaces in urban and rural areas including playing fields, sports’ facilities, play areas and allotments.","version":"2020-10","documentationUrl":"https://www.ordnancesurvey.co.uk/business-government/products/open-map-greenspace","dataStructures":["Vector"],"category":"Greenspace","formats":[{"format":"ESRI® Shapefile"},{"format":"GML","subformat":"3"},{"format":"GeoPackage"}],"url":"https://api.os.uk/downloads/v1/products/OpenGreenspace","imageCount":3,"imageTemplate":"https://api.os.uk/downloads/v1/products/OpenGreenspace/images/{index}","downloadsUrl":"https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads","areas":["GB","HP","HT","HU","HY","HZ","NA","NB","NC","ND","NF","NG","NH","NJ","NK","NL","NM","NN","NO","NR","NS","NT","NU","NW","NX","NY","NZ","SD","SE","SH","SJ","SK","SM","SN","SO","SP","SR","SS","ST","SU","SV","SW","SX","SY","SZ","TA","TF","TG","TL","TM","TQ","TR","TV"]}`
 *All available parameters for downloading OS Open Greenspace*
 
 *Step 4: DownloadsUrl*
@@ -146,8 +140,7 @@ link (see 'url' in screenshot below) and the 'fileName' which allows us
 to determine the download format e.g. zip, csv, vector tiles etc, and
 also use to name the downloaded file.
 
-![](./media/image6.png)
-
+`[{"md5":"38A059AEC5A63FFA95F6FFD942A4CBC9","size":4101,"url":"https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads?area=HT&format=ESRI%C2%AE+Shapefile&redirect","format":"ESRI® Shapefile","area":"HT","fileName":"opgrsp_essh_ht.zip"}]`
 *The 'url' is our download link, confirmed by the presence of
 '&redirect' at the end of the request*
 
@@ -183,6 +176,40 @@ FME Desktop 2019.
 ![](./media/image7.png)
 
 *Sample of python code*
+
+`or index,row in dfMerge.iterrows(): # Iterate over dataframe rows
+    if row['version'] > row['user_version']: # If the Product API date is greater than the users current version then an update is available
+        print (">> Update available for {}. Currently downloading...".format(row['name']))
+        # Variable
+        dataFormat = row['user_format'] 
+        # Create directory for download (if it doesn't already exist)        
+        saveArea = os.path.join(realPath,row['id']) 
+        check = os.path.isdir(saveArea)
+        if check == False: 
+            os.mkdir(saveArea)
+        # Get product download URL
+        r1 = requests.get(row['url']).json() 
+        apiDownload = r1['downloadsUrl'] 
+        # Create list for specified areas 
+        userArea = row['user_area']
+        areaID = userArea.split(",") 
+        # Start of download process:
+        for area in areaID: # Loop over area list e.g. GB or HP,HT etc 
+            r2 = requests.get(apiDownload+"?format="+dataFormat+"&area="+area).json() # Obtain list of available files to download (fileName) and loop through (note: some datasets can have multiple files to download per area)
+            for req2 in r2:
+                with open (saveArea+"\\"+req2['fileName'], 'wb') as fd: # Using fileName captures the file extension e.g. csv, zip, mbtiles etc
+                    download = requests.get(req2['url'], stream=True, verify=False )
+                    for chunk in download.iter_content(chunk_size=128):
+                        fd.write(chunk)
+            print (">> {} has downloaded.".format(area))   
+        print (">> Download complete for {}.". format(row['name']))
+        row.at['user_version'] = row['version'] # Update the user_version column with the latest dates
+    else:
+        print (">> No updates available for {}, you have the latest version.".format(row['name']))
+
+# Export dataframe to csv
+dfMerge.to_csv(plLoc, index=False, columns =["id", "user_version", "user_format", "user_area"], encoding ='latin1' )`
+
 
 ![](./media/image8.png)
 
