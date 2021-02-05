@@ -120,16 +120,14 @@ We take the 'downloadsUrl' obtained in our previous request and add to
 it the format we require the data (specified in CSV file) and complete
 it with a specific area (from list created above). So, if I wanted OS
 Open Green space, in GML format, for all of GB, then my request would
-look like:
-
-<https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads?format=GML&area=GB>
+look like: <https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads?format=GML&area=GB>
 
 However, if I wanted the same product in shapefile format for areas HP
 and HT, then I would require two separate requests that look like:
 
-HP:<https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads?format=ESRI%C2%AE%20Shapefile&area=HP>
+HP: <https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads?format=ESRI%C2%AE%20Shapefile&area=HP>
 
-HT:<https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads?format=ESRI%C2%AE%20Shapefile&area=HT>
+HT: <https://api.os.uk/downloads/v1/products/OpenGreenspace/downloads?format=ESRI%C2%AE%20Shapefile&area=HT>
 
 *Step 5: Product Download*
 
