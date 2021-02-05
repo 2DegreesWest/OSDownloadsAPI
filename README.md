@@ -184,5 +184,6 @@ methodology. For a bit of inspiration, see how Node JS has been used to
 download Terrain50 data here:
 <https://labs.os.uk/public/os-data-hub-tutorials/web-development/automated-open-data-download>
 
-Click [here](https://osdatahub.os.uk/) to sign up for the OS Data Hub,
+Click [here](https://osdatahub.os.uk/) to sign up for the OS Data Hub.
+
 Have any questions? Tweet [@OrdnanceSurvey](https://twitter.com/ordnancesurvey) and tag [#OSDeveloper](https://twitter.com/hashtag/osdeveloper).
