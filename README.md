@@ -29,7 +29,7 @@ Firstly, we wanted a method of recording the status of our current
 datasets and that would also be quick and easy to process within
 different tools -- arriving at a simple csv format. The csv file stores
 the latest version date of your datasets which are then compared against
-the latest product version dates.
+the latest product version dates via the API.
 
 All the user has to do is:
 
